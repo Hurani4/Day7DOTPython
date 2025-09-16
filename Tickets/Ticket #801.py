@@ -1,0 +1,14 @@
+import tkinter as tk
+import requests
+
+def get_weather():
+    city = entry.get()
+    data = requests.get(f"https://example.com/weather/{city}").text
+    label.config(text=data)
+
+root = tk.Tk()
+entry = tk.Entry(root); entry.pack()
+button = tk.Button(root, text="Get Weather", command=get_weather); button.pack()
+label = tk.Label(root, text=""); label.pack()
+
+root.mainloop
